@@ -1,0 +1,142 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 42.5%; }
+
+body {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777777;
+  box-sizing: border-box; }
+
+.header {
+  background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.8), rgba(28, 62, 255, 0.8)), url("../img/background1.jpg");
+  background-color: cover;
+  background-position: top;
+  position: relative;
+  height: 95vh;
+  clip-path: ellipse(74% 70% at 51% 29%); }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 30px;
+    left: 30px; }
+  .header__logo-box {
+    position: absolute;
+    top: 30px;
+    left: 30px; }
+
+.logo {
+  height: 70px; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  animation-name: animationtest;
+  animation-duration: 2s; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6.2rem;
+    font-weight: 400;
+    letter-spacing: 15px;
+    animation: moveInLeft 1s ease; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 18px;
+    animation: moveInRight 1s ease; }
+
+/* chung :link là khi bình thường nó như nào đó . :visited là khi đưa vô nó làm gì đó  */
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  text-decoration: none;
+  position: relative; }
+
+.btn--animated {
+  animation: moveButton 1s ease; }
+
+.btn--white {
+  color: #777777;
+  background-color: #fff; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 100px;
+  transition: all .5s ease; }
+
+.btn--white::after {
+  background-color: #fff; }
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.4);
+  opacity: 0; }
+
+/* key */
+@keyframes animationtest {
+  0% {
+    opacity: 0;
+    transform: translate(0, -100px); }
+  80% {
+    transform: translate(0, -20px); }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); } }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes moveButton {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  100% {
+    transform: translateY(0); } }
